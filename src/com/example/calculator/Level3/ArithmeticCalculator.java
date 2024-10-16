@@ -14,8 +14,8 @@ public class ArithmeticCalculator<T extends Number>{
         this.resultList.add(result);
     }
     /*Method*/
-    public double calOperation(T firstNumber, T secondNumber, String operator){
-        OperatorType operatorType = OperatorType.operatorString(operator);
+    public double CalOperation(T firstNumber, T secondNumber, String operator){
+        OperatorType operatorType = OperatorType.OperatorString(operator);
         switch(operatorType){
             case ADD:
                 return firstNumber.doubleValue() + secondNumber.doubleValue();

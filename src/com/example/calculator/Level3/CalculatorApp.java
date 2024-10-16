@@ -71,8 +71,8 @@ public class CalculatorApp {
                     }
 
                     try {
-                        if(doubleFlag) result = (double) arithmeticCalculator.calOperation(firstNumber, secondNumber, operator);
-                        else result = (int)arithmeticCalculator.calOperation(firstNumber, secondNumber, operator);
+                        if(doubleFlag) result = (double) arithmeticCalculator.CalOperation(firstNumber, secondNumber, operator);
+                        else result = (int)arithmeticCalculator.CalOperation(firstNumber, secondNumber, operator);
                         arithmeticCalculator.setResultList(result);
                     } catch (ArithmeticException e) {
                         System.out.println("나누기 값이 0입니다.");

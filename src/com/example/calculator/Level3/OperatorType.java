@@ -16,7 +16,7 @@ public enum OperatorType {
         return this.type;
     }
 
-    public static OperatorType operatorString(String param) {
+    public static OperatorType OperatorString(String param) {
         for (OperatorType operator : OperatorType.values()){
             if(operator.getType().equals(param)){
                 return operator;
