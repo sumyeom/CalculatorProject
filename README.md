@@ -31,3 +31,4 @@
 ---
 ##### Trouble Shooting
 1. [Enum 사용하기](https://withsumyeom.tistory.com/14)
+2. [Generic 사용](https://withsumyeom.tistory.com/15)
