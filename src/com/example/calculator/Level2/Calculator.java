@@ -12,7 +12,7 @@ public class Calculator {
     public void setResultList(int result){
         this.resultList.add(result);
     }
-    public int calOperation(int firstNumber, int secondNumber, String operator){
+    public int CalOperation(int firstNumber, int secondNumber, String operator){
         int result = 0;
         switch(operator){
             case "+":
@@ -35,7 +35,7 @@ public class Calculator {
         return result;
     }
 
-    public void removeResult(){
+    public void RemoveResult(){
         this.resultList.remove(0);
     }
 }

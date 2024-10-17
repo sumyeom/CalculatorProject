@@ -12,7 +12,7 @@ public class CalculatorApp {
         while(true){
             if(flag) break;
             System.out.println("원하시는 동작을 숫자로 입력하세요.");
-            System.out.println("1. 계산하기 | 2. 이전 계산 결과 확인 | 3. 삭제하기 | 4. 종료하기");
+            System.out.println("1. 계산하기 | 2. 이전 계산 결과 확인 | 3. 삭제하기 | 4. 종료하기(exit 입력 가능)");
             String command = scanner.nextLine();
             switch(command){
                 case "1":
@@ -20,14 +20,15 @@ public class CalculatorApp {
                     calculator(calculator);
                     break;
                 case "2":
+                    // 이전에 저장된 계산 결과들 확인
                     System.out.println("결과 확인 : " + calculator.getResultList());
                     break;
                 case "3":
-                    calculator.removeResult();
+                    calculator.RemoveResult();
                     System.out.println("첫번째 계산 결과가 삭제되었습니다.");
                     System.out.println("결과 확인 : " + calculator.getResultList());
                     break;
-                case "4":
+                case "4", "exit":
                     flag = true;
                     break;
                 default:
@@ -47,6 +48,7 @@ public class CalculatorApp {
         System.out.println("두번째 숫자를 입력하세요");
         String secondString = scanner.nextLine();
 
+        // 정수 형식인지 확인
         try{
             parseOperand(firstString);
             parseOperand(secondString);
@@ -60,6 +62,8 @@ public class CalculatorApp {
 
         System.out.println("원하시는 사칙 연산을 입력하세요");
         String operator = scanner.nextLine();
+
+        // 올바른 연산자(+, -, *, /) 형식인지 확인
         try{
             parseOperator(operator);
         }catch (NumberFormatException e){
@@ -69,7 +73,7 @@ public class CalculatorApp {
         }
 
         try{
-            result = calculator.calOperation(firstNumber, secondNumber, operator);
+            result = calculator.CalOperation(firstNumber, secondNumber, operator);
             calculator.setResultList(result);
         } catch(ArithmeticException e){
             System.out.println(e.getMessage());
