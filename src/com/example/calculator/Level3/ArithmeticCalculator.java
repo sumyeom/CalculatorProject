@@ -15,6 +15,7 @@ public class ArithmeticCalculator<T extends Number>{
     }
     /*Method*/
     public double CalOperation(T firstNumber, T secondNumber, String operator){
+        // 전달받은 operator로 Enum 값 확인
         OperatorType operatorType = OperatorType.OperatorString(operator);
         switch(operatorType){
             case ADD:

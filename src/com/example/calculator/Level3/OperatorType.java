@@ -16,6 +16,7 @@ public enum OperatorType {
         return this.type;
     }
 
+    // param으로 같은 String을 가진 Enum 값 확인
     public static OperatorType OperatorString(String param) {
         for (OperatorType operator : OperatorType.values()){
             if(operator.getType().equals(param)){

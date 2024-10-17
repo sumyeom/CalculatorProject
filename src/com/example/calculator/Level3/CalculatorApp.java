@@ -40,8 +40,9 @@ public class CalculatorApp {
                             System.out.println("------------------------------------------------------");
                             break;
                         }
-
-                    } else {
+                    }
+                    // Integer 형식
+                    else {
                         try {
                             firstNumber = Integer.parseInt(firstString);
                             secondNumber = Integer.parseInt(secondString);
@@ -54,6 +55,7 @@ public class CalculatorApp {
                     System.out.println("원하시는 사칙 연산을 입력하세요");
                     String operator = scanner.nextLine();
 
+                    // 올바른 연산자(+, -, *, /) 형식인지 확인
                     ParseOperator parseOperator = (po) ->{
                         final String OPERATION_REQ = "[+\\-*/]";
 
@@ -70,6 +72,8 @@ public class CalculatorApp {
                         break;
                     }
 
+                    // Double 형식이면 result에 Double 형식으로
+                    // Integer 형식이면 result 에 Integer 형식으로 저장
                     try {
                         if(doubleFlag) result = (double) arithmeticCalculator.CalOperation(firstNumber, secondNumber, operator);
                         else result = (int)arithmeticCalculator.CalOperation(firstNumber, secondNumber, operator);
@@ -84,6 +88,7 @@ public class CalculatorApp {
                     System.out.println("------------------------------------------------------");
                 }
                 case "2" -> {
+                    // 이전에 저장된 계산 결과들 확인
                     System.out.println("결과 확인 : " + arithmeticCalculator.getResultList());
                     System.out.println("------------------------------------------------------");
                 }
@@ -94,6 +99,7 @@ public class CalculatorApp {
                     System.out.println("------------------------------------------------------");
                 }
                 case "4" -> {
+                    // 입력한 값보다 큰 이전 결과 리스트 출력
                     System.out.println("값을 입력해주세요");
                     String compareStr = scanner.nextLine();
                     double temp = Double.parseDouble(compareStr);
@@ -134,6 +140,7 @@ public class CalculatorApp {
         }
     }
 
+    // 연산자 확인 함수형 인터페이스
     interface ParseOperator{
         void parse(String operator) throws NumberFormatException;
     }
