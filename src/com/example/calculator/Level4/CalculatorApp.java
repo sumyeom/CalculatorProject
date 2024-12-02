@@ -143,7 +143,7 @@ public class CalculatorApp {
         }
     }
     public static String[] divideExpression(String expression){
-        String[] expressionArr = expression.split(" ");
+        String[] expressionArr = expression.split("(?<=[+-/*()])|(?=[+=/*()])");
         String expressionStr = "";
 
         Stack<String> expressionStack = new Stack<>();
